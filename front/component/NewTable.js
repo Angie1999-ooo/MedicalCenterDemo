@@ -217,13 +217,7 @@ const NewTable = observer(() => {
         }
     }
 
-    let value;
-    function onChange(args): void {
-         console.log(args)
-        value= args.checked;
-    }
-
-
+   
 
     async function onActionBegin(args) {
 
@@ -465,11 +459,9 @@ const NewTable = observer(() => {
                     </div>
                 </div>
                 <div className='row'>
-                    <CheckBoxComponent checked={true} label='Согласие на обработку персональных данных'  change={ onChange } required></CheckBoxComponent>
+                    <CheckBoxComponent checked={true} label='Согласие на обработку персональных данных'   required></CheckBoxComponent>
                 </div>
-                <div>Согласие на обработку персональных данных
-                    <Checkbox onChange={handleChange} required/>
-                </div>
+              
             </Form>
 
 
