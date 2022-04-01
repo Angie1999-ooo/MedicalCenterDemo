@@ -301,7 +301,7 @@ const NewTable = observer(() => {
 
         await updatePatient(newPatient).then(value => {
 
-            patient[ind] = value
+            patient[ind] = newPatient
 
         })
 
@@ -312,7 +312,7 @@ const NewTable = observer(() => {
 
         const index = scheduleObj.eventsData.findIndex((event) => event.Id === args.data[0].Id);
 
-        scheduleObj.eventsData.splice(index)
+        scheduleObj.eventsData.splice(index,1)
 
         scheduleObj.eventSettings.dataSource = scheduleObj.eventsData;
 
@@ -320,7 +320,7 @@ const NewTable = observer(() => {
 
         console.log(index)
 
-        acceptance.splice(index)
+        acceptance.splice(index,1)
 
         await deleteAcceptance(args.data[0].Id)
 
