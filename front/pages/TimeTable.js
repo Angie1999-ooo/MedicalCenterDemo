@@ -43,7 +43,7 @@ const TimeTable= observer(()=> {
 
                     doctor.setDoctors(fillName.content);
                     doctor.setTotalCount(fillName.totalElements)
-                    console.log('fillName.totalElements',fillName.totalElements)
+                 
                 }
             )
         }
@@ -71,7 +71,7 @@ const TimeTable= observer(()=> {
             fetchTimetableByName(filteredData, doctor.page, 20).then(fillName => {
 
                     doctor.setTimetable(fillName);
-                    console.log(fillName)
+                   
                 }
             )
         }
