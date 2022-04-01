@@ -50,7 +50,7 @@ const TimeTable= observer(()=> {
 
         else
         {
-            fetchDoctorBySpeiality(doctor.selectedSpecialties, doctor.page, 15).then(doc => {
+            fetchDoctorBySpeiality(doctor.selectedSpecialties.id, doctor.page, 15).then(doc => {
                 doctor.setDoctors(doc.content);
                 doctor.setTotalCount(doc.totalElements)
             })
@@ -78,7 +78,7 @@ const TimeTable= observer(()=> {
 
         else
         {
-            fetchTimetableBySpeiality(doctor.selectedSpecialties, doctor.page, 15).then(timetable => {
+            fetchTimetableBySpeiality(doctor.selectedSpecialties.id, doctor.page, 15).then(timetable => {
                 doctor.setTimetable(timetable);
 
             })
