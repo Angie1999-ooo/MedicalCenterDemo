@@ -1,0 +1,55 @@
+
+
+
+.block-events.e-schedule .e-month-view.e-work-days.doctors,
+.block-events.e-schedule  .e-timeline-view .e-work-hours.doctors {
+    background-color: rgb(222 236 252 );
+}
+
+
+.block-events.e-schedule .e-timeline-view.e-resource-cells {
+    height: 66px;
+}
+
+
+.block-events.e-schedule .template-wrap .resource-image {
+    background-repeat: no-repeat;
+    background-size: 45px;
+    height: 45px;
+    width: 45px;
+}
+
+.block-events.e-schedule .template-wrap .resource-details {
+    padding-left: 10px;
+}
+
+.block-events.e-schedule .template-wrap .resource-details .resource-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.block-events.e-schedule.e-device .template-wrap .resource-details .resource-name {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.block-events.e-schedule.e-device .e-resource-tree-popup .e-fullrow {
+    height: 50px;
+}
+
+.block-events.e-schedule.e-device .template-wrap .resource-details .resource-designation {
+    display: none;
+}
+
+.block-events.e-schedule .template-wrap .resource-image.will-smith {
+    background-image: url('https://ej2.syncfusion.com/react/demos/src/schedule/images/will-smith.png');
+}
+
+.block-events.e-schedule .template-wrap .resource-image.alice {
+    background-image: url('https://ej2.syncfusion.com/react/demos/src/schedule/images/alice.png');
+}
+
+.block-events.e-schedule .template-wrap .resource-image.robson {
+    background-image: url('https://ej2.syncfusion.com/react/demos/src/schedule/images/robson.png');
+}
