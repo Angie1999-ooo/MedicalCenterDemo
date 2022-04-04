@@ -632,8 +632,8 @@ const DoctorPage = () => {
             id: timetableId,
             dayWeek: dayJob,
             doctor: doctorObj,
-            startTime: editDate.startTime,
-            endTime: editDate.endTime
+           startTime:format(startToday, "HH:mm:ss"),
+            endTime: format(endToday, "HH:mm:ss")
         };
 
         const newTimetable = [...inputField];
