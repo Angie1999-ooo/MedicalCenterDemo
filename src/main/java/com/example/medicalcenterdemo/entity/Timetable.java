@@ -1,6 +1,6 @@
 package com.example.medicalcenterdemo.entity;
 
-import com.example.medicalcenterdemo.enumaration.DayWeek;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
