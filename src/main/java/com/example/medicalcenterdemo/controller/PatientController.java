@@ -46,7 +46,6 @@ public class PatientController {
             return ResponseEntity.ok(patientService.updatePatient(patient));
         }
         catch (Exception e) {
-
             return ResponseEntity.badRequest().body("Не удалось изменить данные");
         }
     }
