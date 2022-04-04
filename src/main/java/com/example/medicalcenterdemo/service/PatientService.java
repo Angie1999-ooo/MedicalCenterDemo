@@ -24,12 +24,9 @@ public class PatientService {
     public Patient addPatient(Patient patient) throws EntityAlreadyExist {
 
         if (patient.getId() != null) {
-
             throw new EntityAlreadyExist();
-
         }
         else {
-
             patientRepository.save(patient);
         }
 
