@@ -15,10 +15,7 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.Objects;
 
-
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
-//@Where(clause = "DELETED = 0")
 @Getter
 @Setter
 @ToString
