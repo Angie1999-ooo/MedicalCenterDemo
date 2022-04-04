@@ -59,7 +59,6 @@ public class DoctorService {
     public Page<Doctor> getAllBySpeciality(Speciality speciality, int page, int size) {
 
         Pageable pageable = PageRequest.of(page, size);
-
         return doctorRepository.findAllBySpeciality(speciality, pageable);
     }
 
@@ -98,12 +97,10 @@ public class DoctorService {
         int startOfPage = pageable.getPageNumber() * pageable.getPageSize();
 
         if (startOfPage > fill.size()) {
-
             return new PageImpl<>(new ArrayList<>(), pageable, 0);
         }
 
         int endOfPage = Math.min(startOfPage + pageable.getPageSize(), fill.size());
-
         return  new PageImpl<Doctor>(fill.subList(startOfPage, endOfPage), pageable, fill.size());
 
     }
@@ -112,14 +109,12 @@ public class DoctorService {
     public Long delete(Long id) {
 
         doctorRepository.deleteById(id);
-
         return id;
     }
 
     public Doctor addDoctor(Doctor doctor) throws EntityAlreadyExist {
 
         if (doctor.getId() != null) {
-
             throw new EntityAlreadyExist();
 
         }
@@ -138,12 +133,10 @@ public class DoctorService {
     public Doctor updateDoctor(Doctor doctor) {
 
         if (doctor.getId() == null) {
-
             throw new EntityNotExist();
         }
 
         doctorRepository.save(doctor);
-
         return doctor;
     }
 
