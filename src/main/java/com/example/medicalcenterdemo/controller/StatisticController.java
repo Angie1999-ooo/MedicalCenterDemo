@@ -25,8 +25,7 @@ public class StatisticController {
 
     @GetMapping()
     public ResponseEntity getAllBy() {
-
-
+        
         return  ResponseEntity.ok(satisticRepository.findAll());
 
     }
@@ -36,26 +35,17 @@ public class StatisticController {
     public ResponseEntity getAllBy( @RequestParam(value = "endDate")   @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
                                    @RequestParam(value = "period") String period) {
 
-
         LocalDate startDate = LocalDate.now();
-
-
 
         switch (period) {
             case "Неделя":
-
                 startDate = endDate.minusWeeks(1);
-
                 break;
             case "Месяц":
-
                 startDate = endDate.minusMonths(1);
-
                 break;
             case "Год":
-
                 startDate = endDate.minusYears(1);
-
                 break;
             default:
                 return  ResponseEntity.ok( satisticRepository.findAll());
