@@ -39,7 +39,6 @@ public class DoctorController {
     public ResponseEntity getAllBy(@RequestParam(value = "page", defaultValue = "1") int page,
                                    @RequestParam(value = "limit", defaultValue = "5") int limit) {
 
-
         return  ResponseEntity.ok(doctorService.getAll(page,limit));
 
     }
@@ -47,14 +46,14 @@ public class DoctorController {
     @GetMapping(params = {"speciality", "page", "limit"})
     public ResponseEntity getAllByspeciality(@RequestParam(value = "speciality") Speciality speciality, @RequestParam(value = "page", defaultValue = "1") int page,
                                              @RequestParam(value = "limit", defaultValue = "5") int limit) {
+        
         return ResponseEntity.ok(doctorService.getAllBySpeciality(speciality, page, limit));
 
     }
 
     @GetMapping(params={"fullName", "page", "limit"})
     public ResponseEntity getByName(@RequestParam(value="fullName")String fullName, @RequestParam(value = "page", defaultValue = "1") int page,
-                                    @RequestParam(value = "limit", defaultValue = "20") int limit )
-    {
+                                    @RequestParam(value = "limit", defaultValue = "20") int limit ){
 
         return  ResponseEntity.ok(doctorService.getByName(fullName,page, limit));
     }
