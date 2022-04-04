@@ -32,11 +32,8 @@ public class TimeTableService {
     public  Page<Timetable> getAll(int page, int size) {
 
         Page<Doctor> personList = doctorService.getAll(page, size);
-
         Pageable pageable = PageRequest.of(page, size);
-
         List<Timetable> timetables = new ArrayList<>();
-
 
         for (Doctor doctor : personList) {
 
@@ -55,9 +52,7 @@ public class TimeTableService {
                 throw new EntityAlreadyExist();
             }
             if (time.getDoctor() == null) {
-
                 Optional<Doctor> doctor= doctorRepository.findById(doctorRepository.count());
-
                 time.setDoctor(doctor.get());
             }
         }
@@ -68,7 +63,6 @@ public class TimeTableService {
     public List<Timetable> updateTimetable(List<Timetable> timetable) {
 
         for(Timetable result :timetable ) {
-
             timetableRepository.findById(result.getId()).orElseThrow(RuntimeException::new);
 
         }
@@ -84,9 +78,8 @@ public class TimeTableService {
     public List<Timetable> getAllBySpeciality(Speciality speciality, int page, int size) {
 
         Page<Doctor> personList = doctorService.getAllBySpeciality(speciality, page, size);
-
         List<Timetable> timetables = new ArrayList<>();
-
+        
         for (Doctor doctor : personList) {
 
             timetables.addAll(timetableRepository.findByDoctor(doctor));
@@ -99,28 +92,23 @@ public class TimeTableService {
     public List<Timetable> getByName(String fullName, int page, int size) {
 
         Page<Doctor> personList = doctorService.getByName(fullName, page, size);
-
         List<Timetable> timetables = new ArrayList<>();
 
         for (Doctor doctor : personList) {
 
             timetables.addAll(timetableRepository.findByDoctor(doctor));
         }
-
         return timetables;
     }
 
 
 
     public Optional<Timetable> getOne(Long id) {
-
-        return timetableRepository.findById(id);
+       return timetableRepository.findById(id);
     }
 
     public Long delete(Long id) {
-
         timetableRepository.deleteById(id);
-
         return id;
 
     }
