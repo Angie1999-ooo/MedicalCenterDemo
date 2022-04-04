@@ -36,28 +36,22 @@ public class AcceptanceService {
     {
 
         if (patient.getId() != null) {
-
             throw new EntityAlreadyExist();
         }
 
         if (patientRepository.getPatientByEmail(patient.getEmail()).isPresent()) {
-
             throw new EmailAlreadyUsedException();
         }
 
 
         mailSender.send(patient.getEmail(),"Медицинский центр","Вы зписаны на приём ");
-
         Patient newPatient  =  patientRepository.save(patient);
-
         Acceptance acceptance = new Acceptance(newPatient,doctor,startDate,endDate);
-
         return acceptanceRepository.save(acceptance);
     }
 
     public List<Acceptance> getAcceptance()
     {
-
         return acceptanceRepository.findAll();
     }
 
