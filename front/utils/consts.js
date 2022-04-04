@@ -1,0 +1,5 @@
+export const MEDICAL_ROUTE = '/'
+export const DOCTOR_ROUTE='/doctor'
+export const PATIENT_ROUTE = '/patient'
+export const SPECIALITY_ROUTE = '/speciality'
+export const TIMETABLE_ROUTE = '/timetable'
