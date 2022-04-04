@@ -16,6 +16,7 @@ public class SpecialityController {
 
     @GetMapping
     public ResponseEntity getAll() {
+        
         return ResponseEntity.ok(specialityService.getAll());
     }
 
