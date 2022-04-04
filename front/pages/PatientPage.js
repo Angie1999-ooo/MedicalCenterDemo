@@ -217,7 +217,7 @@ export default function CustomPaginationActionsTable() {
                         ).map((row) => (
                             <TableRow key={row.id}>
                                     <TableCell  align="center" >
-                                    {row.firstName} {row.secondName} {row.middleName}
+                                   {row.secondName} {row.firstName} {row.middleName}
                                 </TableCell>
                                 <TableCell  align="center">
                                     {row.email}
