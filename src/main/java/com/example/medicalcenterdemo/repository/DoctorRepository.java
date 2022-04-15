@@ -20,7 +20,7 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long>, PagingAnd
 
     Page<Doctor> findAllBySpeciality(Speciality speciality,Pageable pageable);
 
-    List<Doctor> findBySecondName(String secondName);
-
+    @Query( "select p  from Doctor p where concat(p.secondName, ' ', p.firstName, ' ', p.middleName) like :fullName% ")
+    Page<Doctor> findByFullName(String fullName,Pageable pageable);
 
 }
