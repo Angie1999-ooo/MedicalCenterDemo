@@ -32,41 +32,17 @@ public class TimeTableController {
     DoctorRepository doctorRepository;
 
 
-
-    @GetMapping(params={"page","limit"})
-    public ResponseEntity getAll(@RequestParam(value = "page" ,defaultValue = "0") int page,
-                                 @RequestParam(value = "limit",defaultValue = "5") int limit){
-
-        return ResponseEntity.ok(timeTableService.getAll(page,limit));
-
-    }
-
-
     @GetMapping(params = {"doctor"})
     public ResponseEntity getByDoctor(@RequestParam(value = "doctor" ,defaultValue = "20") Doctor doctor) {
 
         return ResponseEntity.ok(timeTableService.getByDoctor(doctor));
     }
 
-    @GetMapping(params = {"speciality","page","limit"})
-    public ResponseEntity getBySpeciality(@RequestParam(value = "speciality" ,defaultValue = "20")Speciality speciality,@RequestParam(value = "page" ,defaultValue = "0") int page,
-            @RequestParam(value = "limit",defaultValue = "5") int limit)  {
-
-        return ResponseEntity.ok(timeTableService.getAllBySpeciality(speciality,page,limit));
-    }
 
     @GetMapping("{id}")
     public ResponseEntity getOne(@PathVariable Long id) {
 
         return ResponseUtil.wrapOrNotFound(timeTableService.getOne(id));
-    }
-
-    @GetMapping(params={"fullName", "page", "limit"})
-    public ResponseEntity getByName(@RequestParam(value="fullName")String fullName, @RequestParam(value = "page", defaultValue = "1") int page,
-                                    @RequestParam(value = "limit", defaultValue = "20") int limit )
-    {
-
-        return  ResponseEntity.ok(timeTableService.getByName(fullName,page, limit));
     }
 
 
