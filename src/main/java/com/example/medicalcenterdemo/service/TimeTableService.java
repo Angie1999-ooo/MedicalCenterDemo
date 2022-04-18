@@ -58,20 +58,6 @@ public class TimeTableService {
 
 
 
-    public List<Timetable> getByName(String fullName, int page, int size) {
-
-        Page<Doctor> personList = doctorService.getByName(fullName, page, size);
-        List<Timetable> timetables = new ArrayList<>();
-
-        for (Doctor doctor : personList) {
-
-            timetables.addAll(timetableRepository.findByDoctor(doctor));
-        }
-        return timetables;
-    }
-
-
-
     public Optional<Timetable> getOne(Long id) {
        return timetableRepository.findById(id);
     }
