@@ -62,34 +62,6 @@ const TimeTable= observer(()=> {
     }, [doctor.selectedSpecialties,doctor.page,filteredData])
 
 
-
-    useEffect(() => {
-
-        if(doctor.selectedSpecialties === null || doctor.selectedSpecialties.id ==undefined  && filteredData.length === 0) {
-            fetchTimeTable(doctor.page,15).then(timetable => {
-                doctor.setTimetable(timetable.content);
-
-            })
-        }
-        else if(filteredData.length !== 0  )
-        {
-            fetchTimetableByName(filteredData, doctor.page, 15).then(fillName => {
-                    doctor.setTimetable(fillName);
-
-                }
-            )
-        }
-
-        else
-        {
-            fetchTimetableBySpeiality(doctor.selectedSpecialties.id, doctor.page, 15).then(timetable => {
-                doctor.setTimetable(timetable);
-
-            })
-        }
-
-    }, [doctor.page,filteredData,doctor.selectedSpecialties])
-
     useEffect(() => {
 
         fetchSpetiality().then(data => doctor.setSpeciality(data))
