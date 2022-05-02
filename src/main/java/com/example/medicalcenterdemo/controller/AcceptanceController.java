@@ -70,7 +70,7 @@ public class AcceptanceController {
     }
 
     @PutMapping
-    @PreAuthorize(" hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('developers:write')")
     public ResponseEntity updateAcceptance(@RequestBody Acceptance acceptance) {
 
         if(acceptance.getId() == null)
