@@ -52,9 +52,7 @@ public class AuthController {
 
     @PostMapping("/registration")
     public ResponseEntity registration(@RequestBody UserDTO user) {
-
         return ResponseEntity.ok(patientService.addUser(user));
-
     }
 
 
