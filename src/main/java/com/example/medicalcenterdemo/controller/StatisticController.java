@@ -24,8 +24,7 @@ public class StatisticController {
 
     @GetMapping()
     public ResponseEntity getAllBy() {
-
-
+       
         return  ResponseEntity.ok(satisticRepository.findAll());
 
     }
