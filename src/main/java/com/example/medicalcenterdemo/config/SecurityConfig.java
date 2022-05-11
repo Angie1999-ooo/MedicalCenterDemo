@@ -45,7 +45,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/acceptance").permitAll()
                 .antMatchers("/doctor/**").permitAll()
                 .antMatchers("/timetable/**").permitAll()
-//                .antMatchers("/patient").hasAuthority("developers:write")
                 .antMatchers("/speciality").permitAll()
                 .antMatchers("/statistic").permitAll()
                 .antMatchers("/auth/login").permitAll()
